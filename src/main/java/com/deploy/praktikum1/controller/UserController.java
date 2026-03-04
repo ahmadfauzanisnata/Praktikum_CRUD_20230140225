@@ -43,4 +43,43 @@ public class UserController {
                 "data", result
         ));
     }
+
+    @GetMapping(
+            path = "/api/users/{id}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Map<String, Object>> getUserById(@PathVariable("id") String id) {
+        UserDto result = userService.getUserById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of(
+                "status", "success",
+                "data", result
+        ));
+    }
+
+    @PutMapping(
+            path = "/api/users/{id}",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Map<String, Object>> UpdateUser(
+            @PathVariable("id") String id,
+            @RequestBody UserAddRequest request
+    ) {
+        UserDto result = userService.UpdateUser(id, request);
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of(
+                "status", "success",
+                "data", result
+        ));
+    }
+
+    @DeleteMapping(
+            path = "/api/users/{id}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<Map<String, Object>> DeleteUser(@PathVariable("id") String id) {
+        userService.DeleteUser(id);
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of(
+                "status", "success delete user with id " + id
+        ));
+    }
 }
