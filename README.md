@@ -13,6 +13,10 @@
 4. Delete User
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fdedebc3-f7e3-4e79-b80d-df78915abbe3" />
 
+5. Hasil didalam database
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9b77c6e5-ccdc-4f33-81cc-ea05233fc5c5" />
+
+
 
    
 
